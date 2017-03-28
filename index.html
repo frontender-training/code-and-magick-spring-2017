@@ -171,7 +171,7 @@
 <script type="text/javascript">
 var fireballSize = 22;
 var getFireballSpeed = function (left) {
-  if (0 == left) {
+  if (true == left) {
     return 5;
   } else {
     return 2;
@@ -180,16 +180,20 @@ var getFireballSpeed = function (left) {
 
 var wizardSpeed = 3;
 var wizardWidth = 70;
-var getWizardHeight = function (wizardWidth) {      
-  return (1.337 * wizardWidth);
+var getWizardHeight = function (wizardWidth) {  
+  var calcWizardHeight =  1.337 * wizardWidth;
+  return calcWizardHeight; 
 }
 
-function getWizardX (width) {   
-   return (width / 2) - (wizardWidth / 2);
-}
+var wizardHeight = getWizardHeight(70);
 
-function getWizardY (height) {   
-   return (height - (1.337 * wizardWidth)) * (2 / 3);
+function getWizardX (width) {
+  var wizardX = (width / 2) - (wizardWidth / 2);  
+  return wizardX;
+}
+function getWizardY (height) {
+  var wizardY = (height - wizardHeight) * (2 / 3);   
+  return wizardY;
 }
 
 </script>
