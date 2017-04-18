@@ -46,9 +46,8 @@ window.renderStatistics = function (ctx, names, times) {
 
     // Задаем цвета гистограмм для игроков
     
-    function getBarColor (namePlayer, randomOpacity) {
-    var randomOpacity = Math.random().toFixed(2); // Переменная, задающая прозрачность колоники гистограмма
-    var namePlayer = names[i];
+    function fillBarColor (namePlayer) {
+    var randomOpacity = Math.random().toFixed(2); // Переменная, задающая прозрачность колоники гистограмма    
       if (namePlayer == 'Вы') {
         ctx.fillStyle = 'rgba(255, 0, 0, 1)';
       } else {
@@ -56,7 +55,7 @@ window.renderStatistics = function (ctx, names, times) {
       }
     }
 
-    ctx.fillStyle = getBarColor(); // Вызываем функцию заливки гистограммы
+    ctx.fillStyle = fillBarColor(names[i]); // Вызываем функцию заливки гистограммы
     ctx.fillRect(initialX + indent * i, initialY - barWidth, barHeigth, barWidth);
     ctx.fillStyle = 'rgba(0, 0, 0, 1)';
     ctx.fillText(names[i], initialX + indent * i, initialY + indentName);
