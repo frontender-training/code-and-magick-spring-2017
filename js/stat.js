@@ -17,7 +17,7 @@ window.renderStatistics = function (ctx, names, times) {
 
   function getMaxValue(array) {
     var max = -1;
-    for (var i = 0 ; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
       var value = array[i];
       if (value > max) {
         max = value;
@@ -39,14 +39,14 @@ window.renderStatistics = function (ctx, names, times) {
   var indentTime = 25; // px;
 
   ctx.textBaseline = 'top'; // положение надписи от левого верхнего угла
-    
-  // Задаем цвета гистограмм для игроков    
+
+  // Задаем цвета гистограмм для игроков   
   function fillBarColor(namePlayer) {
-  var randomOpacity = Math.random().toFixed(2); // Переменная, задающая прозрачность колоники гистограмма    
+    var randomOpacity = Math.random().toFixed(2); // Переменная, задающая прозрачность колоники гистограмма
     if (namePlayer === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, '+randomOpacity+')';
+      ctx.fillStyle = 'rgba(0, 0, 255, ' + randomOpacity + ')';
     }
   }
 
