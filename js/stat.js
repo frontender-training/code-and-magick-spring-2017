@@ -15,19 +15,22 @@ window.renderStatistics = function (ctx, names, times) {
 
   ctx.fillText('Ура вы победили!', 120, 40);
   
-  var max = -1;
-  var maxIndex = -1;
 
-  for (var i = 0 ; i < times.length; i++) {
-    var time = times[i];    
-    if (time > max) {
-      max = time;
-      maxIndex = i;
-    }
-  }  
+  function getMaxValue(array) {
+      var max = -1;
+      var maxIndex = -1;
+      for (var i = 0 ; i < array.length; i++) {
+        var value = array[i];
+        if (value > max) {
+          max = value;
+          maxIndex = i;
+        }
+      }
+      return max;
+    } 
 
   var histogramHeight = 150;
-  var step = histogramHeight / max;
+  var step = histogramHeight / getMaxValue(times[i]);
 
   ctx.fillText('Список результатов:', 120, 60);  
 
