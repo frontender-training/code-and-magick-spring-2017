@@ -40,7 +40,7 @@ window.renderStatistics = function (ctx, names, times) {
 
   ctx.textBaseline = 'top'; // положение надписи от левого верхнего угла
 
-  // Задаем цвета гистограмм для игроков   
+  // Задаем цвета гистограмм для игроков
   function fillBarColor(namePlayer) {
     var randomOpacity = Math.random().toFixed(2); // Переменная, задающая прозрачность колоники гистограмма
     if (namePlayer === 'Вы') {
